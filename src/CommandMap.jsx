@@ -113,10 +113,11 @@ function isFacility(location) {
 }
 
 function colorForCategory(location) {
+  if (location.visited) return '#3FB950'
   if (location.category === 'meal') return '#D29922'
-  if (location.category === 'park') return '#3FB950'
+  if (location.category === 'park') return '#58A6FF'
   if (location.category === 'logistics') return '#8B949E'
-  return '#58A6FF'
+  return '#C9D1D9'
 }
 
 function getPlaybackCueTone(route, location) {
@@ -2604,6 +2605,22 @@ export default function CommandMap({
           </div>
         </div>
       )}
+
+      <div className="pointer-events-none absolute bottom-6 left-6 z-20 flex flex-col gap-1 border border-[#30363D] bg-[#161b22]/92 px-3 py-2 backdrop-blur">
+        <div className="mb-1 text-[8px] font-black uppercase tracking-[0.18em] text-[#8B949E]">凡例</div>
+        {[
+          { color: '#3FB950', label: '訪問済み' },
+          { color: '#C9D1D9', label: '未訪問' },
+          { color: '#D29922', label: '食事' },
+          { color: '#58A6FF', label: '公園・観光' },
+          { color: '#8B949E', label: '立ち寄り' },
+        ].map(({ color, label }) => (
+          <div key={label} className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full" style={{ backgroundColor: color }} />
+            <span className="text-[9px] text-[#C9D1D9]">{label}</span>
+          </div>
+        ))}
+      </div>
 
       {weatherCollapsed ? (
         <button

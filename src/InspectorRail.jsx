@@ -331,6 +331,7 @@ export default function InspectorRail({
   onConvertNoteToTask,
   onToggleMealStatus,
   onToggleExpenseSettled,
+  onToggleLocationVisited,
 }) {
   const entity = useMemo(() => {
     const collectionName = selection ? {
@@ -685,8 +686,23 @@ export default function InspectorRail({
 
         {location && !compactRailMode ? (
           <section className="border border-[#30363D] bg-[#161b22] p-4">
-            <SectionTitle eyebrow="Location Intel" title={location.title} />
-            <div className="mb-3 space-y-2 text-[11px] text-[#C9D1D9]">
+            <div className="mb-3 flex items-start justify-between gap-2">
+              <div className="flex-1">
+                <SectionTitle eyebrow="Location Intel" title={location.title} />
+              </div>
+              <button
+                type="button"
+                onClick={() => onToggleLocationVisited && onToggleLocationVisited(location.id)}
+                className={`flex items-center gap-1.5 rounded-[2px] border px-2.5 py-1 text-[9px] font-black uppercase tracking-wider transition-colors ${
+                  location.visited
+                    ? 'border-[#3FB950]/30 bg-[#3FB950]/10 text-[#3FB950]'
+                    : 'border-[#30363D] bg-[#0d1117] text-[#8B949E] hover:border-[#3FB950]/30 hover:text-[#3FB950]'
+                }`}
+              >
+                {location.visited ? '✓ 訪問済み' : '未訪問'}
+              </button>
+            </div>
+            <div className="space-y-2 text-[11px] text-[#C9D1D9]">
               <div className="flex items-start gap-2">
                 <MapPin size={13} className="mt-0.5 text-[#58A6FF]" />
                 <span>{location.address}</span>

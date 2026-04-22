@@ -352,6 +352,7 @@ function buildLocations() {
     {
       id: 'pine-airbnb',
       type: 'location',
+      visited: false,
       title: TRIP_META.airbnb.name,
       category: 'stay',
       dayId: 'all',
@@ -384,6 +385,7 @@ function buildLocations() {
     {
       id: 'north-star-kettleman-lunch',
       type: 'location',
+      visited: false,
       title: 'Bravo Farms',
       category: 'logistics',
       dayId: 'thu',
@@ -402,6 +404,7 @@ function buildLocations() {
     {
       id: 'north-star-oakdale-break',
       type: 'location',
+      visited: false,
       title: 'Oakdale Cheese & Specialties',
       category: 'logistics',
       dayId: 'thu',
@@ -423,6 +426,7 @@ function buildLocations() {
     {
       id: 'grill-pml',
       type: 'location',
+      visited: false,
       title: 'The Grill at Pine Mountain Lake',
       category: 'meal',
       dayId: 'all',
@@ -438,6 +442,7 @@ function buildLocations() {
     {
       id: 'two-guys-pizza',
       type: 'location',
+      visited: false,
       title: 'Two Guys Pizza Pies',
       category: 'meal',
       dayId: 'thu',
@@ -453,6 +458,7 @@ function buildLocations() {
     {
       id: 'mountain-room',
       type: 'location',
+      visited: false,
       title: 'The Mountain Room',
       category: 'meal',
       dayId: 'fri',
@@ -468,6 +474,7 @@ function buildLocations() {
     {
       id: 'priest-station',
       type: 'location',
+      visited: false,
       title: 'Priest Station Cafe',
       category: 'meal',
       dayId: 'sat',
@@ -483,6 +490,7 @@ function buildLocations() {
     {
       id: 'around-horn',
       type: 'location',
+      visited: false,
       title: 'Around The Horn Brewing Company',
       category: 'meal',
       dayId: 'sat',
@@ -498,6 +506,7 @@ function buildLocations() {
     {
       id: 'pine-lake-beach',
       type: 'location',
+      visited: false,
       title: 'Pine Mountain Lake Beach',
       category: 'activity',
       dayId: 'fri',
@@ -514,6 +523,7 @@ function buildLocations() {
     {
       id: 'yosemite',
       type: 'location',
+      visited: false,
       title: 'Big Oak Flat Entrance',
       category: 'park',
       dayId: 'sat',
@@ -531,6 +541,7 @@ function buildLocations() {
     {
       id: 'big-oak-flat',
       type: 'location',
+      visited: false,
       title: 'Big Oak Flat Entrance',
       category: 'park',
       dayId: 'sat',
@@ -544,6 +555,7 @@ function buildLocations() {
     {
       id: 'groveland-grocery',
       type: 'location',
+      visited: false,
       title: 'Groveland Grocery',
       category: 'logistics',
       dayId: 'fri',
@@ -560,6 +572,7 @@ function buildLocations() {
     {
       id: 'groveland-fuel',
       type: 'location',
+      visited: false,
       title: 'Groveland Fuel Stop',
       category: 'logistics',
       dayId: 'thu',

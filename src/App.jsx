@@ -4268,6 +4268,15 @@ function App() {
     })
   }, [currentFamilyId, setDoc])
 
+  const toggleLocationVisited = useCallback((locationId) => {
+    setDoc((current) => {
+      const locations = current.locations.map((location) =>
+        location.id === locationId ? { ...location, visited: !location.visited } : location,
+      )
+      return { ...current, locations }
+    })
+  }, [setDoc])
+
   useEffect(() => {
     if (!liveExternalData) return
     if (!GOOGLE_MAPS_API_KEY) return
@@ -4916,6 +4925,7 @@ function App() {
         onConvertNoteToTask={convertNoteToTask}
         onToggleMealStatus={toggleMealStatus}
         onToggleExpenseSettled={toggleExpenseSettled}
+        onToggleLocationVisited={toggleLocationVisited}
       />
     </div>
   )
